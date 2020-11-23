@@ -1,6 +1,42 @@
 {
   "books": [
     {
+      "0": {
+        "id": 2,
+        "username": "auer"
+      },
+      "1": {
+        "id": 8,
+        "username": "maverick"
+      },
+      "2": {
+        "id": 1,
+        "username": "pouros"
+      },
+      "3": {
+        "id": 1,
+        "username": "pouros"
+      },
+      "4": {
+        "id": 1,
+        "username": "pouros"
+      },
+      "5": {
+        "id": 1,
+        "username": "pouros"
+      },
+      "6": {
+        "id": 1,
+        "username": "pouros"
+      },
+      "7": {
+        "id": 1,
+        "username": "pouros"
+      },
+      "8": {
+        "id": 1,
+        "username": "pouros"
+      },
       "id": 1,
       "title": "Grapefruit",
       "subtitle": "A book of Instruction and Drawings.",
@@ -15,6 +51,30 @@
         {
           "id": 8,
           "username": "maverick"
+        },
+        {
+          "id": 1,
+          "username": "pouros"
+        },
+        {
+          "id": 1,
+          "username": "pouros"
+        },
+        {
+          "id": 1,
+          "username": "pouros"
+        },
+        {
+          "id": 1,
+          "username": "pouros"
+        },
+        {
+          "id": 1,
+          "username": "pouros"
+        },
+        {
+          "id": 1,
+          "username": "pouros"
         }
       ]
     },
@@ -41,6 +101,10 @@
         {
           "id": 1,
           "username": "pouros"
+        },
+        {
+          "id": 1,
+          "username": "pouros"
         }
       ]
     },
@@ -59,6 +123,10 @@
         {
           "id": 9,
           "username": "alex"
+        },
+        {
+          "id": 1,
+          "username": "pouros"
         }
       ]
     },
@@ -138,6 +206,18 @@
       ]
     },
     {
+      "0": {
+        "id": 9,
+        "username": "alex"
+      },
+      "1": {
+        "id": 3,
+        "username": "marvin"
+      },
+      "2": {
+        "id": 2,
+        "username": "auer"
+      },
       "id": 8,
       "title": "The Autobiography of Malcolm X",
       "subtitle": "As Told to Alex Haley",
