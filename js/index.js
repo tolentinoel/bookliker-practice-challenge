@@ -2,8 +2,19 @@
 const bookUrl = 'http://localhost:3000/books'
 const userUrl = 'http://localhost:3000/users'
 document.addEventListener("DOMContentLoaded", () => {
+    fetchUser()
     fetchListOfBooks()
 });
+
+function fetchUser(){
+    fetch(userUrl)
+    .then(res => res.json())
+    .then(jsonData => getUser(jsonData))
+}
+
+function getUser(data){
+    user1 = data[0]
+}
 
 function fetchListOfBooks(){
     fetch(bookUrl)
@@ -63,6 +74,12 @@ function showPanel(event, obj){
 
     const btn = document.createElement('button')
     btn.innerText = "LIKE"
+    for(let user of obj.users) {
+        if (user.id == user1.id) {
+        btn.innerText = "UNLIKE"
+        } 
+    }
+
     panel.appendChild(btn)
     btn.addEventListener('click', () => {
         toggleBtn(obj)
@@ -73,7 +90,7 @@ function showPanel(event, obj){
 function toggleBtn(obj){
     const theBtn = document.querySelector('button')
     const id = obj.id
-    const user = {"id":1, "username":"pouros"}
+   
 
     if (theBtn.innerText == "LIKE"){
         theBtn.innerText = "UNLIKE"
@@ -83,7 +100,7 @@ function toggleBtn(obj){
               "Content-Type": "application/json",
               Accept: "application/json"
             },
-            body: JSON.stringify({users: obj.users.concat(user)})
+            body: JSON.stringify({users: obj.users.concat(user1)})
           })
           .then(res=>res.json())
           .then(json=>addLike(obj))
@@ -95,7 +112,7 @@ function toggleBtn(obj){
               "Content-Type": "application/json",
               Accept: "application/json"
             },
-            body: JSON.stringify({users: obj.users.pop(user)})
+            body: JSON.stringify({users: obj.users.pop(user1)})
           })
           .then(res=>res.json())
           .then(json => removeLike(obj))
@@ -105,20 +122,19 @@ function toggleBtn(obj){
 }
 
 function addLike(book){
-    const user = {"id":1, "username":"pouros"}
     const list = document.querySelector('#list-of-likes')
     const newUser = document.createElement('li')
 
-    newUser.innerText = user.username
+    newUser.innerText = user1.username
     list.appendChild(newUser)
 }
 
 function removeLike(book){
-    const user = {"id":1, "username":"pouros"}
+    
     const list = document.querySelector('#list-of-likes')
 //if user exists on list, remove it from list. this is knowing it's the last child on 
 //the list of users who liked the book.
-    if (user) {
+    if (user1) {
         list.removeChild(list.lastChild)
     }
 }
